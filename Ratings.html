@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <link rel="stylesheet" href="project.css"/>
+        <script src="https://kit.fontawesome.com/3e586c7ebf.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <header>
+          <a href="login.html"><img src="images/user.png" width="40px"></a>
+    <span class="movies">movies</span> <span class="paradise">paradise</span>
+    <!-- <a href="login.html"><img title="login" src="images/user.png" width="30px" height="30px"></a> -->
+    <div class="search-box">
+      <input class="search-txt" type="text" id="searchInput" placeholder="Type to search">
+      <a class="search-btn" href="#">
+        <i class="fas fa-search"></i>
+      </a>
+    </div>
+      
+          </header>
+          <div class="menue">
+            <ul>
+          <li><a href="web_project.html">home</a></li>
+          <li><a href="TopRate.html" >top rate</a></li>
+          <li><a href="tv-shows.html">tv shows</a></li>
+          <li><a href="animation.html">animation</a></li>
+          <li><a href="Ratings.html">ratings</a></li>
+           </ul></div>
+
+     <div class="s-Rating">     
+    <p>pick your favorite kind of movies:</p>
+</div> 
+
+           <div id="container">
+
+<div class="ratings"><a href="#">drama</a></div>
+<div class="ratings"><a href="#">action</a></div>
+<div class="ratings"><a href="#">horror</a></div>
+
+<div class="ratings"><a href="#">war</a></div>
+<div class="ratings"><a href="#">comedy</a></div>
+<div class="ratings"><a href="#">fantasy</a></div>
+
+<div class="ratings"><a href="#">science fiction</a> </div>
+<div class="ratings"><a href="#">romantic</a></div>
+<div class="ratings"><a href="#">adventure</a></div>
+
+<div class="ratings"><a href="#">crime</a></div>
+<div class="ratings"><a href="#">historical</a></div>
+<div class="ratings"><a href="#">cartoon</a></div>
+
+<div class="ratings"><a href="#">animation</a></div>
+<div class="ratings"><a href="#">mystery</a></div>
+<div class="ratings"><a href="#">fiction</a></div>
+
+<div class="ratings"><a href="#">social</a></div>
+<div class="ratings"><a href="#">speculative</a></div>
+<div class="ratings"><a href="#">western</a></div>
+
+<div class="ratings"><a href="#">thriller</a></div>
+<div class="ratings"><a href="#">anime</a></div>
+<div class="ratings"><a href="#">saga</a></div>
+
+<div class="ratings"><a href="#">philosophical</a></div>
+<div class="ratings"><a href="#">space</a></div>
+<div class="ratings"><a href="#">magic</a></div>
+
+</div>
+
+<form id="addForm">
+   <input id="new-rating" type="text" placeholder="add new rating..."> 
+   <button class="addButton">Add</button> 
+  
+</form> 
+
+    <footer>
+
+        © 2020  All Rights Reserved. Powered by HolleyWood
+        <br><br>
+    
+      <a href="#">About</a>|
+      <a href="#">privacy</a>|
+      <a href="#">terms</a>|
+      <a href="#">contact</a>
+      <div>
+        <a href="#"><img src="images/facebook.png" width="15px" height="15px"></a>
+        <a href="#"><img src="images/instagram.png" width="15px" height="15px"></a>
+        <a href="#"><img src="images/twitter.png" width="15px" height="15px"></a>
+      </div>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js"></script>
+      <script src="script.js"></script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let parent = document.getElementById("container").getElementsByTagName("div")[0];
+            let child=document.getElementsByTagName("a")[0];
+            let ratingsList = document.getElementById("container");
+            let newRatingInput = document.getElementById("new-rating");
+            let addForm = document.getElementById("addForm");
+            //let addForm = document.forms["addForm"];
+            let ratingsListItems = ratingsList.children;
+
+            //Delete car
+            //  ratingsList.addEventListener("click", function (e) {
+            //     if (e.target.className === "deleteButton") {
+            //        ratingsList.removeChild(e.target.parentElement);
+            //    }
+            //   });
+           
+              
+            
+            //Add new car
+            addForm.addEventListener("submit", function (e) {
+                //prevent the EMPTY action from being called which refreshes the page
+                e.preventDefault();
+                if (newRatingInput.value !== "") {
+                    let newRatingsListItem = document.createElement("div");
+                    let newRatinga = document.createElement("a");
+                    newRatinga.innerHTML = newRatingInput.value;
+                    newRatingsListItem.classList.add("ratings");
+                   
+                    newRatingsListItem.appendChild(newRatinga);
+                    ratingsList.appendChild( newRatingsListItem);
+                    newRatingInput.value = "";
+                  
+                }
+            });
+            function remove(){
+             var removed= parent.removeChild(child);
+             parent.appendChild(removed);
+            }
+         
+        })
+       
+      </script>
+      
+    </body>
+</html>
